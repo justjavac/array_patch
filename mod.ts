@@ -12,6 +12,6 @@ export default function arrayPatch(arr1: Item[], arr2: Item[]): Item[] {
 
   return arr2.map(({ label, value }) => ({
     label,
-    value: map.has(label) ? map.get(label)! : value,
+    value: map.has(label) ? map.get(label) : value,
   }));
 }

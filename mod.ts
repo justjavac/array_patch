@@ -4,9 +4,9 @@ export interface Item {
 }
 
 export default function arrayPatch(arr1: Item[], arr2: Item[]): Item[] {
-  const entries: [string, string][] = arr1.map((
-    { label, value },
-  ) => [label, value]);
+  const entries: [string, string][] = arr1.map(({ label, value }) => {
+    return [label, value];
+  });
 
   const map = new Map(entries);
 

@@ -81,3 +81,16 @@ Deno.test("label add & delete", (): void => {
   ];
   assertEquals(arrayPatch(arr1, arr2), output);
 });
+
+Deno.test("value is nullish", (): void => {
+  const arr1: Item[] = [
+    { label: "a", value: undefined },
+  ];
+  const arr2: Item[] = [
+    { label: "a", value: "1" },
+  ];
+  const output: Item[] = [
+    { label: "a", value: undefined },
+  ];
+  assertEquals(arrayPatch(arr1, arr2), output);
+});
